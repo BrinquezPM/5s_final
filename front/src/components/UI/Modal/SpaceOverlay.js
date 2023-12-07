@@ -27,7 +27,7 @@ const Overlay = (props) => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        await axios.get(`https://localhost:5000/api/rooms`).then((data) => {
+        await axios.get(`http://localhost:5000/api/rooms`).then((data) => {
           setRooms(data.data);
         });
       } catch (error) {

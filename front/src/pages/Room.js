@@ -97,7 +97,7 @@ const Room = () => {
       if (!space[0].scores && !space[0].comments) {
         try {
           const resRate = await axios.post(
-            "https://localhost:5000/api/ratings",
+            "http://localhost:5000/api/ratings",
             newRate
           );
 
@@ -105,7 +105,7 @@ const Room = () => {
           extractComments(lines, newComment);
 
           const resComment = await axios.post(
-            "https://localhost:5000/api/comment",
+            "http://localhost:5000/api/comment",
             newComment
           );
         } catch (error) {
@@ -114,7 +114,7 @@ const Room = () => {
       } else {
         try {
           const resRate = await axios.put(
-            `https://localhost:5000/api/ratings/${space[0].scores.id}`,
+            `http://localhost:5000/api/ratings/${space[0].scores.id}`,
             newRate
           );
 
@@ -122,7 +122,7 @@ const Room = () => {
           extractComments(lines, newComment);
 
           const resComment = await axios.put(
-            `https://localhost:5000/api/comment/${space[0].scores.id}`,
+            `http://localhost:5000/api/comment/${space[0].scores.id}`,
             newComment
           );
         } catch (error) {
@@ -138,7 +138,7 @@ const Room = () => {
     const fetchRoomData = async () => {
       try {
         const response = await axios.get(
-          `https://localhost:5000/api/rooms/${params.roomId}/room`
+          `http://localhost:5000/api/rooms/${params.roomId}/room`
         );
         setRoomData(response.data);
       } catch (error) {
@@ -151,7 +151,7 @@ const Room = () => {
   useEffect(() => {
     const fetchSpaces = async () => {
       try {
-        const response = await axios.get(`https://localhost:5000/api/space`);
+        const response = await axios.get(`http://localhost:5000/api/space`);
         setSpaces(() => {
           return response.data.filter((space) => space.roomId === roomData?.id);
         });
@@ -177,10 +177,10 @@ const Room = () => {
             return;
           }
           const response = await axios.get(
-            `https://localhost:5000/api/ratings`
+            `http://localhost:5000/api/ratings`
           );
           const resComment = await axios.get(
-            `https://localhost:5000/api/comment`
+            `http://localhost:5000/api/comment`
           );
 
           const scores = response.data.filter(

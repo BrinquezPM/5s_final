@@ -59,7 +59,7 @@ const Content = ({
       if (isMore) {
         try {
           await axios
-            .get(`https://localhost:5000/api/spaceimage/get/${rowId}`)
+            .get(`http://localhost:5000/api/spaceimage/get/${rowId}`)
             .then((data) => {
               setImages(data);
               console.log(data);

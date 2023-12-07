@@ -6,7 +6,7 @@ import Content from "../Content";
 import addIcon from "../../../static/images/add-user.png";
 
 const UserContent = () => {
-  const urls = [`https://localhost:5000/api/user/`];
+  const urls = [`http://localhost:5000/api/user/`];
 
   const [userHeaders] = useState([
     { Header: "Id", accessor: "id" },

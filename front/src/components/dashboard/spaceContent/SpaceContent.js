@@ -6,8 +6,8 @@ import Overlay from "../../UI/Modal/SpaceOverlay";
 
 const SpaceContent = () => {
   const urls = [
-    `https://localhost:5000/api/space/`,
-    `https://localhost:5000/api/spaceimage/upload/`,
+    `http://localhost:5000/api/space/`,
+    `http://localhost:5000/api/spaceimage/upload/`,
   ];
 
   const [spaceHeaders] = useState([

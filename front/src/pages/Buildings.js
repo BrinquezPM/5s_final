@@ -10,7 +10,7 @@ const Buildings = () => {
     const fetchData = async () => {
       try {
         await axios
-          .get("https://localhost:5000/api/buildings")
+          .get("http://localhost:5000/api/buildings")
           .then((response) => {
             console.log(response.body);
             setBuildingData(response.data);

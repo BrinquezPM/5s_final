@@ -11,7 +11,7 @@ const DashBoardContent = () => {
 
   const fetchRooms = async () => {
     try {
-      await axios.get(`https://localhost:5000/api/rooms`).then((response) => {
+      await axios.get(`http://localhost:5000/api/rooms`).then((response) => {
         setRoomsData(response.data);
       });
     } catch (error) {
